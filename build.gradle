@@ -1,0 +1,33 @@
+apply from: 'buildSystem/dependencies.gradle'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://maven.google.com" }
+        maven { url "https://jitpack.io" }
+    }
+    ext {
+        minSdkVersion = 17
+        targetSdkVersion = 26
+        compileSdkVersion = 26
+        buildToolsVersion = '27.0.3'
+
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

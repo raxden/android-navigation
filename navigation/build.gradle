@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+group = "com.raxdenstudios.navigation"
+version = VERSION_NAME
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: '*.jar', dir: 'libs')
+
+    implementation deps.navigation.implementation
+    api deps.navigation.api
+    annotationProcessor deps.navigation.annotationProcessor
+    compileOnly deps.navigation.compileOnly
+    testImplementation deps.navigation.testImplementation
+    androidTestImplementation deps.navigation.androidTestImplementation
+}
+
+apply from: '../buildSystem/commons.gradle'
+apply from: 'build_javadoc.gradle'
