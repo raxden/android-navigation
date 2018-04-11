@@ -47,6 +47,7 @@ class NavigationManager(builder: Builder) {
         }
     }
 
+
     private fun launchActivity(intent: Intent, options: Bundle?) {
         if (hasRequestCode())
             activity.startActivityForResult(intent, requestCode, options)
