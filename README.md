@@ -1,10 +1,10 @@
 Android Navigation
 ==========
 
-Android Navigation is a util library with a set of useful classes to help to developer. Works on Android 4.1 (API level 16) and upwards.
+Android Navigation is a library to launch activities fast and easy throught builder pattern. Works on Android 4.2 (API level 17) and upwards.
 
-[![Release](https://img.shields.io/github/tag/raxden/android-commons.svg?label=Download)](https://jitpack.io/#raxden/android-commons/)
-[![API](https://img.shields.io/badge/API-16%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[![Release](https://img.shields.io/github/tag/raxden/android-navigation.svg?label=Download)](https://jitpack.io/#raxden/android-navigation/)
+[![API](https://img.shields.io/badge/API-17%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=17)
 
 ## Usage
 
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-	    compile 'com.github.raxden:android-navigation:{versionName}@aar'
+	    compile 'com.github.raxden:android-navigation:4.0.2@aar'
 }
 ```
 
@@ -34,17 +34,13 @@ dependencies {
 <dependency>
 	    <groupId>com.github.raxden</groupId>
 	    <artifactId>AndroidNavigation</artifactId>
-	    <version>{versionName}</version>
+	    <version>4.0.2</version>
 </dependency>
 ```
 
 **3. clone whole repository**
  - Open your **commandline-input** and navigate to your desired destination folder (where you want to put the library)
  - Use the command `git clone https://github.com/raxden/android-navigation.git` to download the full android-navigation repository to your computer (this includes the folder of the library project as well as the example project)
-
-### Documentation
-
-For a **detailed documentation**, please have a look at the [**Wiki**](https://github.com/raxden/android-navigation/wiki) or the [**Javadocs**](https://jitpack.io/com/github/raxden/android-navigation/{versionName}/javadoc/).
 
 ## LICENSE
 
