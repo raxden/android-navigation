@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 group = "com.raxdenstudios.navigation"
 version = VERSION_NAME
@@ -13,17 +16,22 @@ android {
 
         consumerProguardFiles 'proguard-rules.pro'
     }
+
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
     implementation fileTree(include: '*.jar', dir: 'libs')
 
-    implementation deps.navigation.implementation
-    api deps.navigation.api
-    annotationProcessor deps.navigation.annotationProcessor
-    compileOnly deps.navigation.compileOnly
-    testImplementation deps.navigation.testImplementation
-    androidTestImplementation deps.navigation.androidTestImplementation
+    implementation deps.library.implementation
+    api deps.library.api
+    annotationProcessor deps.library.annotationProcessor
+    kapt deps.library.kapt
+    compileOnly deps.library.compileOnly
+    testImplementation deps.library.testImplementation
+    androidTestImplementation deps.library.androidTestImplementation
 }
 
 apply from: '../buildSystem/commons.gradle'

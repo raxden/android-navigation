@@ -1,1 +1,1 @@
-include ':navigation-sample', ':navigation'
+include ':navigation', ':navigation-sample'
