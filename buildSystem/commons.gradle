@@ -59,7 +59,6 @@ void increaseBuildVersion() {
             versionProps['VERSION_NAME'] = matcherVersionNumber.replaceAll(versionName)
         }
         versionProps.store(gradlePropsFile.newWriter(), null)
-        fis.close()
     } else {
         throw new GradleException(":increaseBuildVersion - Could not read version.properties!")
     }
