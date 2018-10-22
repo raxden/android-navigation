@@ -1,48 +1,64 @@
 
 ext {
 
+    // ========== VERSIONS =========================================================================
+
     // Android dependencies
-    kotlinVersion = '1.2.30'
-    supportLibraryVersion = '27.1.0'
-    constraintsLayoutVersion = '1.0.2'
+    def appCompatLibraryVersion = '1.0.0'
+    def constraintLayoutVersion = '1.1.3'
+    def materialVersion = '1.0.0'
+    def kotlinVersion = '1.2.71'
 
     // Testing
-    junitVersion = '4.12'
-    runnerVersion = '1.0.1'
-    espressoVersion = '3.0.1'
+    def junitVersion = '4.12'
+    def assertJVersion = '1.7.0'
+    def mockitoVersion = '1.10.19'
+    def robolectricVersion = '3.6.1'
 
-    deps = [
-            library: [
-                    implementation : [],
-                    api: [],
-                    annotationProcessor : [],
-                    kapt : [],
-                    compileOnly : [],
-                    testImplementation : [
-                            "junit:junit:${junitVersion}",
-                    ],
-                    androidTestImplementation : [
-                            "com.android.support.test:runner:${runnerVersion}",
-                            "com.android.support.test.espresso:espresso-core:${espressoVersion}"
-                    ]
-            ],
-            sample: [
-                    implementation : [
-                            "com.android.support:appcompat-v7:${supportLibraryVersion}",
-                            "com.android.support.constraint:constraint-layout:${constraintsLayoutVersion}",
-                            "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlinVersion}"
-                    ],
-                    annotationProcessor : [],
-                    kapt : [],
-                    compileOnly : [],
-                    testImplementation : [
-                            "junit:junit:${junitVersion}",
-                    ],
-                    androidTestImplementation : [
-                            "com.android.support.test:runner:${runnerVersion}",
-                            "com.android.support.test.espresso:espresso-core:${espressoVersion}"
-                    ]
-            ]
+    // ========== LIBRARIES ========================================================================
+
+    def androidLibs = [
+            appCompat: [group: 'androidx.appcompat', name: 'appcompat', version: appCompatLibraryVersion],
+            constraintLayout: [group: 'androidx.constraintlayout', name: 'constraintlayout', version: constraintLayoutVersion],
+            material: [group: 'com.google.android.material', name: 'material', version: materialVersion],
+            kotlin: [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk7', version: kotlinVersion]
+    ]
+
+    def libs = [
+
+    ]
+
+    def testLibs = [
+            junit: [group: 'junit', name: 'junit', version: junitVersion],
+            assertj: [group: 'org.assertj', name: 'assertj-core', version: assertJVersion],
+            mockito: [group: 'org.mockito', name: 'mockito-core', version: mockitoVersion],
+            robolectric: [group: 'org.robolectric', name: 'robolectric', version: robolectricVersion],
+            robolectricShadowsMultidex: [group: 'org.robolectric', name: 'shadows-multidex', version: robolectricVersion]
+    ]
+
+    // ========== MODULES DEPENDENCIES =============================================================
+
+    libDependencies = [
+            [configuration: "compileOnly", dependency: androidLibs.appCompat],
+            [configuration: "compileOnly", dependency: androidLibs.material],
+            [configuration: "compileOnly", dependency: androidLibs.kotlin],
+            [configuration: "testImplementation", dependency: testLibs.junit],
+            [configuration: "testImplementation", dependency: testLibs.assertj],
+            [configuration: "testImplementation", dependency: testLibs.mockito],
+            [configuration: "testImplementation", dependency: testLibs.robolectric],
+            [configuration: "testImplementation", dependency: testLibs.robolectricShadowsMultidex]
+    ]
+
+    appDependencies = [
+            [configuration: "implementation", dependency: androidLibs.appCompat],
+            [configuration: "implementation", dependency: androidLibs.material],
+            [configuration: "implementation", dependency: androidLibs.constraintLayout],
+            [configuration: "implementation", dependency: androidLibs.kotlin],
+            [configuration: "testImplementation", dependency: testLibs.junit],
+            [configuration: "testImplementation", dependency: testLibs.assertj],
+            [configuration: "testImplementation", dependency: testLibs.mockito],
+            [configuration: "testImplementation", dependency: testLibs.robolectric],
+            [configuration: "testImplementation", dependency: testLibs.robolectricShadowsMultidex],
     ]
 
 }

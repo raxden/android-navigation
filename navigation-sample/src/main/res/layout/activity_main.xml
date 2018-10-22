@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,31 +7,31 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <Button
-        android:id="@+id/openSimpleActivityButton"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/first_button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="open a simple activity"
-        app:layout_constraintBottom_toTopOf="@+id/openTwoActivitiesButton"
+        app:layout_constraintBottom_toTopOf="@+id/second_button_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
-        android:id="@+id/openTwoActivitiesButton"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/second_button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="open two activities"
-        app:layout_constraintBottom_toTopOf="@+id/openThreeActivitiesButton"
+        app:layout_constraintBottom_toTopOf="@+id/third_button_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openSimpleActivityButton" />
+        app:layout_constraintTop_toBottomOf="@+id/first_button_view" />
 
-    <Button
-        android:id="@+id/openThreeActivitiesButton"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/third_button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open Three activities"
@@ -39,6 +39,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openTwoActivitiesButton" />
+        app:layout_constraintTop_toBottomOf="@+id/second_button_view" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
