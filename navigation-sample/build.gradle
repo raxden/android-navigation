@@ -35,8 +35,6 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':navigation')
-
     rootProject.appDependencies.each {
         add(it.configuration, it.dependency, it.options)
     }

@@ -1,7 +1,7 @@
 package com.raxdenstudios.navigation.sample
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.support.v7.app.AppCompatActivity
 import com.raxdenstudios.navigation.NavigationManager
 import kotlinx.android.synthetic.main.activity_main.*
 
